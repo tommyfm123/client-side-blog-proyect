@@ -1,0 +1,219 @@
+.login-container {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container h2 {
+  font-family: "poppins", sans-serif;
+  font-size: 1.8rem;
+  text-align: left;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 3.5rem 4rem;
+  width: 50%;
+  border-radius: 20px;
+  font-family: "poppins", sans-serif;
+  height: min-content;
+}
+
+.login-form button {
+  align-self: flex-end;
+}
+
+.login-flex-column > label {
+  color: #151717;
+  font-weight: 600;
+}
+
+.login-input-form {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  transition: 0.2s ease-in-out;
+}
+
+.login-input {
+  margin-left: 10px;
+  border-radius: 10px;
+  width: 85%;
+  height: 20px;
+  border: none;
+}
+
+.login-input:focus {
+  outline: none;
+}
+
+.login-input-form:focus-within {
+  border: 1.5px solid #2d79f3;
+}
+
+.login-flex-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.RemeberMe {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.login-flex-row > div > label {
+  font-size: 0.5rem;
+  color: black;
+  font-weight: 400;
+}
+
+.login-span {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #2d79f3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login-button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.login-button-submit:hover {
+  background-color: #252727;
+}
+
+.login-paragraph {
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+@media (max-width: 1200px) {
+  .login-container {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 0rem 2rem;
+    width: 90%;
+    border-radius: 20px;
+    font-family: "poppins", sans-serif;
+    height: min-content;
+  }
+
+  .login-flex-column > label {
+    color: #151717;
+    font-weight: 500;
+  }
+
+  .login-input-form {
+    border: 1.5px solid #ecedec;
+    border-radius: 7px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    transition: 0.2s ease-in-out;
+  }
+
+  .login-input {
+    margin-left: 10px;
+    margin-top: 0;
+    border-radius: 10px;
+    width: 85%;
+    height: 20px;
+    border: none;
+  }
+
+  .login-input:focus {
+    outline: none;
+  }
+
+  .login-input-form:focus-within {
+    border: 1.5px solid #2d79f3;
+  }
+
+  .login-flex-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .RemeberMe {
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .login-flex-row > div > label {
+    font-size: 0.5rem;
+    color: black;
+    font-weight: 400;
+  }
+
+  .login-span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #2d79f3;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .login-button-submit {
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .login-button-submit:hover {
+    background-color: #252727;
+  }
+
+  .login-paragraph {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}

@@ -1,0 +1,330 @@
+.containerPostPage {
+  padding-top: 5rem;
+  background-color: #f4f4f4;
+  min-height: 95vh;
+  margin: 0;
+}
+
+.ContainerPost {
+  padding: 0 10rem; /* hace los posts mas chicos*/
+}
+
+.TituloArticulos {
+  text-align: center;
+  font-size: 2rem;
+  /* background: linear-gradient(90deg, #0f3058 0%, #006adc 33.333%, #11181c 66.666%, #0f3058 100%); */
+  background: linear-gradient(
+    90deg,
+    #2d898b 0%,
+    #2b6969 33.333%,
+    #183b3b 66.666%,
+    #6fa8c2 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.PostIndexPage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 9rem;
+  max-width: auto;
+  margin: 0 auto;
+}
+
+/* -----------Post Styles ----------- */
+
+.post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff; /* Blanco puro o un gris claro */
+  border-radius: 15px;
+  padding: 1.6rem 1.7rem;
+  gap: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave y difusa */
+  cursor: pointer;
+  width: 100%;
+}
+
+.titulopost {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+div.post div.texts a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: inherit;
+}
+div.post p.info {
+  margin: 15px 0;
+  color: #888;
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: flex;
+  gap: 10px;
+}
+div.post p.info a.author {
+  color: #333;
+}
+div.post p.summary {
+  margin: 10px 0;
+  line-height: 1.8rem;
+}
+
+.post .image {
+  width: 600px;
+  height: 200px; /* Tamaño uniforme para todas las imágenes */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.post .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.BtnContainerArticulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.btnCrearArticulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  gap: 10px;
+  cursor: pointer;
+  width: auto;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.btnCrearArticulo ion-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.btnCrearArticulo:hover ion-icon {
+  transform: rotate(45deg); /* Girar el icono 45 grados */
+}
+
+/* estilos de post en home.jsx */
+
+.post-home {
+  min-height: 200px;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 97%;
+}
+
+/* Puedes agregar más detalles de diseño */
+.post-home .titulopost {
+  font-size: 16px;
+  color: #2e2e2e;
+}
+
+.post-home .summary {
+  height: 120px;
+}
+
+/* confirmation pop up */
+
+/* Estilos generales del popup */
+.confirmation-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255); /* Fondo oscuro y semitransparente */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999999; /* Asegura que el popup esté encima de otros elementos */
+  backdrop-filter: blur(5px);
+}
+
+.confirmation-popup .popup-content {
+  background-color: white; /* Fondo blanco del cuadro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px; /* Ajusta el tamaño según el contenido */
+}
+
+.confirmation-popup p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffff; /* Texto oscuro para mejor legibilidad */
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.confirmation-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.838);
+  border: 1px solid rgba(0, 0, 0, 0.409);
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirmation-buttons button:hover {
+  background-color: #ddd; /* Color al pasar el cursor por encima */
+}
+
+.confirmation-buttons button:disabled {
+  background-color: #ccc; /* Color de fondo cuando el botón está deshabilitado */
+  cursor: not-allowed; /* Cursor de "no permitido" */
+}
+
+/*  fin confirmation */
+
+@media screen and (min-width: 700px) {
+  div.post {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+/* --------- media queries ------------- */
+
+@media screen and (max-width: 767px) {
+  .containerPostPage {
+    padding-top: 5rem;
+    height: auto;
+  }
+
+  .ContainerPost {
+    padding: 0 0rem; /* hace los posts mas chicos*/
+  }
+
+  .TituloArticulos {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+
+  .PostIndexPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem 1rem;
+    max-width: auto;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* -----------Post Styles ----------- */
+
+  .post {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.107); /* Sombra más suave y difusa */
+    width: 100%;
+  }
+
+  /* Estilos generales del popup */
+  .confirmation-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255); /* Fondo oscuro y semitransparente */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999999; /* Asegura que el popup esté encima de otros elementos */
+    backdrop-filter: blur(5px);
+  }
+
+  .confirmation-popup .popup-content {
+    background-color: white; /* Fondo blanco del cuadro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px; /* Ajusta el tamaño según el contenido */
+  }
+
+  .confirmation-popup p {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* Texto oscuro para mejor legibilidad */
+  }
+
+  .confirmation-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 1rem;
+  }
+
+  .confirmation-buttons button {
+    padding: 0.6rem 2rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffffd6;
+    border: 1px solid rgba(0, 0, 0, 0.409);
+    color: black;
+    cursor: pointer;
+    transition: none;
+  }
+
+  .confirmation-buttons button:hover {
+    background-color: #ffffffd6; /* Color al pasar el cursor por encima */
+  }
+
+  .confirmation-buttons button:disabled {
+    background-color: #ffffffd6; /* Color de fondo cuando el botón está deshabilitado */
+  }
+
+  .post-home {
+    min-height: 370px;
+    max-height: 370px;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Puedes agregar más detalles de diseño */
+  .post-home .titulopost {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2e2e2e;
+  }
+
+  .post-home .summary {
+    height: 140px;
+  }
+}

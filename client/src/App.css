@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=poppins:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  height: 100%;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #222;
+  background-color: #fff8f0;
+  margin: 0;
+  padding: 0;
+  font-family: "poppins";
+}
+img {
+  max-width: 100%;
+}
+main {
+  margin: 0;
+}
+
+form.login,
+form.register {
+  max-width: 400px;
+  margin: 0 auto;
+}
+input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+button {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  background-color: #555;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  padding: 7px 0;
+}
+form.login h1,
+form.register h1 {
+  text-align: center;
+}
+
+div.post-page div.image {
+  max-height: 300px;
+  display: flex;
+  overflow: hidden;
+}
+div.post-page div.image img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+}
+div.post-page a {
+  color: #333;
+  text-decoration: underline;
+}
+div.post-page h1 {
+  text-align: center;
+  margin: 10px 0 5px;
+}
+div.post-page time {
+  text-align: center;
+  display: block;
+  font-size: 1rem;
+  color: #aaa;
+  margin: 10px 0;
+}
+div.post-page div.author {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+div.content p {
+  line-height: 1.7rem;
+  margin: 30px 0;
+}
+div.content li {
+  margin-bottom: 10px;
+}
+div.edit-row {
+  text-align: center;
+  margin-bottom: 20px;
+}
+div.post-page a.edit-btn {
+  background-color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+a svg {
+  height: 20px;
+}

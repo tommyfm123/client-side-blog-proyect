@@ -1,0 +1,189 @@
+.editPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  min-height: 90vh;
+  font-family: "poppins", sans-serif;
+}
+
+.editPost h2 {
+  text-align: center;
+  color: rgb(22, 22, 22);
+  font-weight: 500;
+  font-size: 1.8rem;
+  padding-bottom: 1rem;
+}
+
+.editPost form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Espaciado entre los elementos */
+  width: 50%;
+}
+
+.containerFormEditor {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.editPost input[type="title"],
+.editPost textarea,
+.editPost input[type="text"],
+.editPost .editor {
+  width: 100%; /* Ocupa todo el ancho disponible del formulario */
+  padding: 0.8rem;
+  border: 1px solid #ccc; /* Borde tenue */
+  border-radius: 7px; /* Bordes redondeados */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333; /* Texto oscuro */
+  background-color: #f9f9f9; /* Fondo tenue */
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit; /* Hereda la fuente del contenedor padre */
+}
+
+.editPost input[type="title"]:focus,
+.editPost textarea:focus,
+.editPost input[type="file"]:focus {
+  border-color: #007aff; /* Color azul inspirado en Apple */
+  background-color: #fff; /* Fondo blanco al hacer foco */
+  box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+}
+
+.editPost textarea {
+  resize: none; /* Evita que el usuario cambie el tamaño del textarea */
+  height: 100px; /* Altura inicial */
+}
+
+/* .editPost .editor-container {
+  min-height: 200px; 
+  background: white; 
+  border: 1px solid #ccc; 
+  border-radius: 7px;
+  padding: 12px 16px; 
+} */
+
+/* .editPost .ql-container {
+  width: 830px;
+  border: 1px solid #ccc; 
+  font-size: 16px; 
+  line-height: 1.5;
+  background-color: #f9f9f9; 
+  box-sizing: border-box;
+  min-height: 200px;
+  border-radius: 0 0 7px 7px; 
+  margin: 0 auto;
+} */
+
+/* .editPost .ql-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  border: 1px solid #ccc; 
+  border-radius: 7px 7px 0 0; 
+  background-color: #f4f4f4; 
+} */
+
+.editPost button {
+  width: fit-content; /* Tamaño dinámico según el contenido */
+  padding: 0.8rem 1.5rem; /* Espaciado interno */
+  background-color: #007aff; /* Azul característico */
+  color: white; /* Texto blanco */
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Animación */
+  display: block; /* Asegura que se centre correctamente */
+  margin: 20px auto 0 auto; /* Margen superior y centrado horizontal */
+}
+
+.editPost button:hover {
+  background-color: #005bb5; /* Azul más oscuro al pasar el mouse */
+}
+
+.editPost button:active {
+  transform: scale(0.95); /* Efecto de retroceso al presionar */
+}
+
+@media screen and (max-width: 767px) {
+  .editPost {
+    /* padding-top: 6rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem; */
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+  }
+
+  .editPost h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .editPost form {
+    gap: 1rem; /* Espaciado entre los elementos */
+    width: 95%;
+  }
+
+  .editPost input[type="title"],
+  .editPost textarea,
+  .editPost input[type="text"],
+  .editPost .editor {
+    width: 100%; /* Ocupa todo el ancho disponible del formulario */
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc; /* Borde tenue */
+    border-radius: 7px; /* Bordes redondeados */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333; /* Texto oscuro */
+    background-color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit; /* Hereda la fuente del contenedor padre */
+  }
+
+  .editPost input[type="title"]:focus,
+  .editPost textarea:focus,
+  .editPost input[type="text"]:focus {
+    border-color: #007aff; /* Color azul inspirado en Apple */
+    background-color: #fff; /* Fondo blanco al hacer foco */
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+  }
+
+  .editPost textarea {
+    resize: none; /* Evita que el usuario cambie el tamaño del textarea */
+    height: 100px; /* Altura inicial */
+  }
+
+  .editPost button {
+    padding: 0.8rem 1.5rem; /* Espaciado interno */
+    background-color: #007aff; /* Azul característico */
+    color: white; /* Texto blanco */
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: none; /* Animación */
+  }
+
+  .editPost button:hover {
+    background-color: #007aff; /* Azul más oscuro al pasar el mouse */
+  }
+
+  .editPost button:active {
+    transform: none; /* Efecto de retroceso al presionar */
+  }
+}

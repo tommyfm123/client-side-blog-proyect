@@ -1,0 +1,117 @@
+/* Header principal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  background-color: none;
+  border: none;
+}
+
+header.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 1s ease;
+}
+
+header.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.header-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 90px;
+  border: 1.8px solid rgba(27, 27, 27, 0.268);
+  background-color: rgba(255, 255, 255, 0.408);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.user-options {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.user-options ion-icon {
+  font-size: 1.3rem;
+}
+
+header a {
+  text-decoration: none;
+  color: rgb(30, 29, 29);
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: rgb(102, 100, 100);
+}
+
+header.scrolled .logo,
+header.scrolled .user-options {
+  opacity: 0;
+  pointer-events: none;
+}
+
+header.scrolled .menu {
+  opacity: 1;
+}
+
+@keyframes blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.menu {
+  animation: blur-in 0.5s ease forwards;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .menu {
+    font-size: 0.8rem;
+    gap: 16px;
+  }
+
+  .user-options {
+    gap: 1rem;
+  }
+} */

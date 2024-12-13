@@ -1,0 +1,191 @@
+.createPost {
+  padding: 6rem 0;
+  background-color: #f4f4f4;
+  min-height: 95vh;
+}
+
+.createPost h2 {
+  margin: 0;
+  padding-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    #2d898b 0%,
+    #163737 33.333%,
+    #183b3b 66.666%,
+    #416576 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.createPost .containerCreatePost {
+  justify-content: center;
+  align-items: center; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrado horizontal */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espaciado entre elementos */
+}
+
+.containerCreatePost form {
+  /* border: 2px red solid; */
+  width: 50%;
+  /* padding: 0 30rem; */
+}
+
+.createPost input[type="text"],
+.createPost textarea {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 12px 16px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde tenue */
+  border-radius: 7px; /* Bordes redondeados */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333; /* Texto oscuro */
+  background-color: #f9f9f9; /* Fondo tenue */
+  outline: none;
+  transition: all 0.3s ease; /* Animación suave */
+  font-family: inherit; /* Fuente consistente */
+  margin-bottom: 1rem;
+}
+
+.createPost input[type="title"]:focus,
+.createPost textarea:focus {
+  border-color: #007aff; /* Color azul al hacer foco */
+  background-color: #fff; /* Fondo blanco */
+  box-shadow: 0 0 5px rgba(0, 122, 255, 0.5); /* Resplandor */
+}
+
+.createPost textarea {
+  resize: none; /* Evita que el usuario cambie el tamaño */
+  height: 100px; /* Altura inicial */
+}
+
+.createPost .ql-container {
+  width: auto;
+  /* padding: 12px 16px; */
+  border: 1px solid #ccc; /* Bordes iguales a los inputs */
+  border-radius: 0px 0px 7px 7px; /* Bordes redondeados */
+  font-size: 16px; /* Fuente consistente */
+  line-height: 1.5;
+  background-color: #f9f9f9; /* Fondo tenue */
+  box-sizing: border-box;
+  min-height: 200px;
+  min-width: 700px;
+  margin: 0 auto;
+}
+
+.createPost .ql-toolbar {
+  border: 1px solid #ccc; /* Bordes */
+  border-radius: 7px 7px 0 0; /* Bordes superiores redondeados */
+  background-color: #f4f4f4; /* Fondo tenue */
+}
+
+.createPost .ql-editor {
+  min-height: 200px;
+}
+
+.btnCreatePost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: auto; /* Tamaño dinámico según el contenido */
+  padding: 0.8rem 2rem; /* Espaciado interno */
+  background-color: #007aff; /* Azul característico */
+  color: white; /* Texto blanco */
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Animación */
+  margin: 20px auto 0 auto; /* Margen superior y centrado horizontal */
+}
+
+/* Estilo base del ícono */
+.btnCreatePost ion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out; /* Animación suave */
+  transform: translateX(0); /* Posición inicial */
+}
+
+/* Estilo para el hover en el contenedor del ícono */
+.btnCreatePost:hover ion-icon {
+  transform: translateX(10px); /* Mover el ícono hacia la derecha */
+}
+
+.btnCreatePost :hover {
+  background-color: #005bb5; /* Azul más oscuro al pasar el mouse */
+}
+
+.createPost button:active {
+  transform: scale(0.95); /* Efecto de retroceso al presionar */
+}
+
+.editorContainer {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .createPost {
+    padding: 6rem 0;
+    min-height: 95vh;
+  }
+
+  .createPost h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .containerCreatePost form {
+    width: 90%;
+  }
+
+  .btnCreatePost {
+    padding: 0.8rem 1.5rem; /* Espaciado interno */
+    background-color: #007aff; /* Azul característico */
+    color: white; /* Texto blanco */
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: none; /* Animación */
+  }
+
+  /* Estilo base del ícono */
+  .btnCreatePost ion-icon {
+    font-size: 1.2rem;
+    transition: none; /* Animación suave */
+    transform: none; /* Posición inicial */
+  }
+
+  /* Estilo para el hover en el contenedor del ícono */
+  .btnCreatePost:hover ion-icon {
+    transform: none; /* Mover el ícono hacia la derecha */
+  }
+
+  .btnCreatePost :hover {
+    background-color: #007aff; /* Azul más oscuro al pasar el mouse */
+  }
+
+  .createPost button:active {
+    transform: none; /* Efecto de retroceso al presionar */
+  }
+
+  .editorContainer {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+  }
+}

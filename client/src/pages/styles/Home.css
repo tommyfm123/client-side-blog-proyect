@@ -1,0 +1,1173 @@
+/* Introduction */
+
+.containerIntroduction {
+  /* background-color: #22333B; */
+  padding: 0 2rem;
+  height: 100vh;
+}
+
+.Introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background: radial-gradient(
+    140% 117.13% at 50% 10%,
+    transparent 37.41%,
+    #2d898b 69.27%,
+    #066667 85%,
+    #0e1f25 100%
+  );
+  background-color: #fff8f0;
+  color: rgb(16, 16, 16);
+  border-radius: 0px 0px 50px 50px;
+  scroll-snap-align: start;
+  gap: 15px;
+}
+
+.TituloIntro {
+  margin: 0;
+  text-align: center;
+  /* background: linear-gradient(90deg, #0f3058 0%, #006adc 33.333%, #11181c 66.666%, #0a3c79 100%); */
+  background: linear-gradient(
+    90deg,
+    #2d898b 0%,
+    #163737 33.333%,
+    #183b3b 66.666%,
+    #416576 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-size: 4rem;
+  /* font-weight: 300; */
+}
+
+.DescripcionIntro {
+  color: #373939;
+  font-size: 1.2rem;
+  letter-spacing: 0.2px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.containerBtn {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.BtnArticulos {
+  width: auto;
+  padding: 0.8rem 1.7rem;
+  font-weight: 300;
+  font-size: 1rem;
+  border-radius: 30px;
+  background-color: #22333b;
+  border: 1px rgba(0, 0, 0, 0.201) solid;
+  transition: 0.3s ease all;
+}
+
+.BtnArticulos:hover {
+  transform: translateY(-3px);
+}
+
+/* Section Sobre Mi */
+
+.SobreMi {
+  /* margin-left: 40px;
+    margin-right: 40px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0rem 4rem 4rem 4rem;
+  /* height: 60vh; */
+  scroll-snap-align: start;
+}
+
+.ImgArturo {
+  width: 60%;
+  border-radius: 20px;
+}
+
+.sobreMiBloque1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .NombreSobreMi {
+  font-weight: 500;
+  color: rgb(39, 39, 39);
+} */
+
+.ImgArturo {
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+/* mobile off */
+
+.ImageMobileContainer {
+  display: none;
+}
+
+.ImgArturoMobile {
+  display: none;
+}
+
+.sobreMiBloque2 {
+  padding: 0 1rem;
+}
+
+.sobreMiBloque2 h2 {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  color: #313333;
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.Subtitles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  line-height: 50px;
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.SobreMiDescripcion {
+  font-size: 1.2rem;
+  color: rgb(75, 75, 75);
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+}
+
+.SobreMiDescripcion {
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+/* ------- Especialidades ------ */
+
+.Especialidades {
+  /* background-color: #202223; */
+  /* background: linear-gradient(90deg, #0f3058 30%, #202223 53%, #11181c 66%, #202223 100%);
+     */
+  background-color: #22333b;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: center;
+  gap: 30px;
+  padding: 5rem;
+  /* color: #333; */
+  position: relative;
+  z-index: -1;
+  scroll-snap-align: start;
+}
+
+.Especialidades h2 {
+  margin: 20px 0;
+  padding: 0;
+  font-weight: 500;
+  /* color: #1c1c1e; */
+  color: rgb(244, 244, 244);
+}
+
+.chips {
+  margin-top: 1rem; /* Espaciado superior para los chips */
+}
+
+.chip {
+  display: inline-block;
+  background-color: #e4e4e42a; /* Color de fondo del chip */
+  border: 1px rgba(255, 255, 255, 0.377) solid;
+  color: white; /* Color del texto del chip */
+  border-radius: 36px;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem; /* Espaciado entre chips */
+  font-size: 0.9rem;
+  cursor: default; /* Cambia el cursor para indicar que no son botones */
+  transition: background-color 0.3s; /* Efecto de transición para el fondo */
+}
+
+.chip:hover {
+  background-color: #005bb5; /* Color de fondo al pasar el mouse */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  /* background-color: rgb(245, 245, 247);  */
+  background-color: rgba(181, 178, 178, 0.354);
+  border: 1px rgba(255, 255, 255, 0.271) solid;
+  padding: 38px 40px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: left;
+  transition: 0.1s ease-in all;
+  backdrop-filter: blur(10px); /* Ajusta el valor de blur según sea necesario */
+  color: white;
+}
+
+.grid-item h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 1.2rem;
+  min-height: 40px;
+  color: rgb(236, 236, 236);
+}
+
+.grid-item:hover {
+  transform: scale(1.01);
+}
+
+.two-columns {
+  grid-column: span 2;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes appearBlur {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.Especialidades h2 {
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+/* .grid-item {
+    animation: slideIn 0.5s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+} */
+.grid-item {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .two-columns {
+    grid-column: span 1;
+  }
+}
+
+/* Logros y Certificaciones */
+
+.LogrosCertificaciones {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  scroll-snap-align: start;
+}
+
+.TituloLogros {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding: 0; /* Ajustar el padding */
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: -20px; /* Ajusta este valor para alargar el timeline hacia arriba */
+  left: 50%; /* Centra la línea */
+  transform: translateX(-50%); /* Ajusta la línea a la mitad */
+  bottom: -20px; /* Ajusta este valor para alargar el timeline hacia abajo */
+  width: 2px;
+  background: #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 1rem 0; /* Padding superior e inferior */
+  margin-bottom: 40px; /* Ajusta este valor para aumentar el espacio entre los items */
+  display: flex; /* Usar flexbox para alineación */
+  width: 100%; /* Ancho completo */
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.timeline-item:nth-child(odd) {
+  justify-content: flex-start; /* Alinea a la izquierda para elementos impares */
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-end; /* Alinea a la derecha para elementos pares */
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 50%; /* Centra el icono */
+  transform: translateX(-50%); /* Ajusta el icono a la mitad */
+  width: 12px;
+  height: 12px;
+  background: #22333b;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 1; /* Asegura que el icono esté encima de la línea */
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+  left: 50%; /* Mantiene el icono centrado */
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+  left: 50%; /* Mantiene el icono centrado */
+}
+
+.timeline-item p {
+  margin: 0;
+  padding: 0 1rem; /* Añadir un padding para el texto */
+  font-size: 16px;
+  color: #555;
+  max-width: 250px; /* Limitar el ancho del texto */
+  text-align: left; /* Alinear texto a la izquierda por defecto */
+}
+
+.timeline-item:nth-child(even) p {
+  text-align: left; /* Alinear a la derecha para elementos pares */
+}
+
+.timeline-item strong {
+  color: #2d898b; /* Color inicial para el texto */
+  font-weight: 600;
+}
+
+/* Últimos Artículos */
+
+.UltimosArticulos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 60px; /* Espacio adicional para la paginación */
+  position: relative;
+  z-index: 0;
+  /* height: 70vh; */
+  /* scroll-snap-align: start; */
+  background-color: #22333b;
+}
+
+.btn-vermas {
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  border-radius: 30px;
+  background-color: #2d898b;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: auto;
+  margin: 0 auto;
+  animation: appearBlur linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 15%;
+}
+
+.btn-vermas:hover {
+  background-color: #277173;
+}
+
+.btn-vermas a {
+  text-decoration: none;
+  color: white;
+}
+
+.UltimosArtTitle {
+  color: white;
+  font-weight: 500;
+  animation: appearBlur linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  margin-bottom: 1rem;
+}
+
+.descripcionUltimosArticulos {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 200;
+  animation: appearBlur linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.articulos {
+  position: relative;
+  padding: 1.3rem 0;
+  margin-bottom: 4rem;
+  /* margin: 0 20px; */
+  /* overflow: hidden; */
+  /* z-index: 4; */
+
+  animation: appearBlur linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.Loading {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 3rem;
+}
+
+/* Gradiente en el borde izquierdo */
+.articulos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  background: linear-gradient(to right, #22333b, rgba(255, 255, 255, 0));
+  z-index: 999999;
+}
+
+.articulos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0px;
+  height: 100%;
+  background: linear-gradient(to left, #22333b, rgba(255, 255, 255, 0));
+  z-index: 999999;
+}
+
+.slick-slide {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.articulo {
+  border-radius: 20px;
+  padding: 2.3rem 2.5rem;
+  /* background-color: #F5F5F7; */
+  background-color: white;
+  text-align: left;
+  margin: 0 5px; /* Añade espacio entre las tarjetas */
+  box-sizing: border-box; /* Para asegurar que padding no afecte altura */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.137);
+}
+
+.articulo h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  min-height: 50px;
+  color: #1d1d1f;
+  margin-bottom: 1rem;
+}
+
+.articulo p {
+  font-size: 1rem;
+  color: #6e6e73;
+  margin-bottom: 1.5rem;
+  min-height: 70px;
+}
+
+.articulo button {
+  padding: 1rem;
+  font-weight: 500;
+  border-radius: 30px;
+  background-color: #2d898b;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: 40%;
+}
+
+.articulo button:hover {
+  background-color: #277173;
+}
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.slick-arrow {
+  font-size: 30px;
+  color: black !important;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+  opacity: 1;
+  display: block;
+  position: absolute; /* Cambiar posición para asegurar que estén bien ubicadas */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%);
+}
+
+/* Ajustes de posición para que las flechas estén bien ubicadas */
+/* Sobrescribe las propiedades de las flechas */
+.slick-prev,
+.slick-next {
+  font-size: 20px; /* Tamaño del icono de flecha */
+  line-height: 1; /* Altura de línea normal */
+  color: rgb(255, 255, 255); /* Color de las flechas */
+  background: none; /* Elimina el fondo transparente */
+  border: none; /* Elimina el borde */
+  outline: none; /* Elimina el contorno */
+  width: auto; /* Ajusta al tamaño del icono */
+  height: auto;
+  z-index: 9999; /* Asegura que estén encima de otros elementos */
+  opacity: 1; /* Asegura que sean visibles */
+  display: block; /* Asegura que las flechas sean visibles */
+  cursor: pointer;
+}
+
+/* Posicionamiento adicional de flechas */
+.slick-prev {
+  left: -40px;
+}
+
+.slick-next {
+  right: -40px;
+}
+
+@media (max-width: 768px) {
+  .slick-prev {
+    left: -20px;
+  }
+
+  .slick-next {
+    right: -20px;
+  }
+}
+
+/* Paginación */
+/* Cambia el color de los dots inactivos */
+.slick-dots li button:before {
+  font-size: 50px;
+  color: #e7e4e4 !important; /* Color de los dots inactivos */
+  opacity: 1 !important; /* Fuerza la opacidad para mostrar el color */
+  transition: color 0.8s ease; /* Transición suave para el cambio de color */
+}
+
+/* Cambia el color de los dots activos */
+.slick-dots li.slick-active button:before {
+  color: #9b9c9c !important; /* Color de los dots activos */
+  opacity: 1 !important;
+  font-size: 8px;
+}
+
+/* ------------footer ------- */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 5rem;
+  color: white;
+  background-color: #22333b;
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 10%;
+}
+
+.bloque1 p {
+  text-align: center;
+  line-height: 30px;
+  font-size: 0.8rem;
+}
+
+.bloque2 ul {
+  display: flex;
+  gap: 20px;
+}
+
+.bloque2 ul li {
+  list-style: none;
+}
+
+.bloque2 ul li a {
+  text-decoration: none;
+  /* font-family: SF Display; */
+  font-family: "poppins", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+}
+
+/* beneficios container */
+
+.beneficiosContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 10rem;
+  gap: 1rem;
+}
+
+.beneficiosContainer h2 {
+  font-size: 2.5rem;
+}
+
+.beneficiosContainer p {
+  font-size: 1.2rem;
+}
+
+.beneficiosContainer ul {
+  columns: 1;
+  -webkit-columns: 1;
+  -moz-columns: 1;
+  list-style: none;
+  align-items: center;
+}
+
+.beneficiosContainer ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding-bottom: 1.5rem;
+}
+
+.beneficiosContainer ul li ion-icon {
+  padding-right: 0.5rem;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* Contact section */
+
+.ContactSection {
+  margin: 0;
+  /* max-width: 100px; */
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  animation: appearBlur 0.5s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.questionBlock {
+  background-image: url("../../images/Medicine.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 10rem;
+  border-radius: 20px;
+  color: #fff;
+  position: relative;
+  /* Overlay for reducing contrast */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Ajusta el nivel de opacidad según prefieras */
+  background-blend-mode: darken; /* Mezcla el color de fondo con la imagen */
+}
+
+.questionBlock h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
+  font-family: "poppins", sans-serif;
+}
+
+.BtnContacto {
+  background-color: #2d898b;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s ease all;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.BtnContacto:hover {
+  transform: translateY(-3px);
+}
+
+/* ----------- media queries --------------- */
+
+@media (max-width: 1000px) {
+  /* Introduction */
+
+  .containerIntroduction {
+    /* background-color: #22333B; */
+    padding: 0.5rem;
+    height: 100vh;
+  }
+
+  .Introduction {
+    height: 95vh;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(16, 16, 16);
+    border-radius: 0px 0px 30px 30px;
+    scroll-snap-align: start;
+    padding: 0 0.6rem;
+  }
+
+  .TituloIntro {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .DescripcionIntro {
+    font-size: 0.9rem;
+    padding: 0 3rem;
+  }
+
+  .BtnArticulos {
+    font-weight: 400;
+    font-size: 0.8rem;
+    transition: none;
+  }
+
+  /* ----- sobre mi ---------- */
+
+  .SobreMi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem;
+    height: auto;
+    scroll-snap-align: start;
+  }
+
+  .Subtitles {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    margin-bottom: 0.8rem;
+    padding: 0;
+    gap: 10px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    line-height: 20px;
+  }
+
+  .Subtitles ion-icon {
+    font-size: 1rem;
+  }
+
+  .SobreMiDescripcion {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0 1.4rem;
+  }
+
+  .ImgArturo {
+    display: none;
+  }
+
+  .ImageMobileContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .ImgArturoMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    border-radius: 20px;
+  }
+
+  .sobreMiBloque1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .NombreSobreMi {
+    font-weight: 500;
+    color: rgb(39, 39, 39);
+  }
+
+  .sobreMiBloque2 {
+    padding: 0 1.5rem;
+  }
+
+  .sobreMiBloque2 h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  /* ------- Especialidades ------ */
+
+  .Especialidades {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 1rem;
+    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .Especialidades h2 {
+    padding: 1rem;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .chips {
+    margin-top: 0.5rem; /* Espaciado superior para los chips */
+  }
+
+  .chip {
+    display: inline-block;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.8rem;
+  }
+
+  .grid-item {
+    padding: 1.8rem 1.8rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgb(219, 218, 218);
+  }
+
+  .grid-item h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 0.8rem;
+    min-height: 20px;
+    color: rgb(236, 236, 236);
+  }
+
+  .grid-item p {
+    font-size: 1rem;
+  }
+
+  .Especialidades h2 {
+    animation: appearBlur 0.5s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  /* .grid-item {
+    animation: slideIn 0.5s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+} */
+  .grid-item {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  /* Logros y Certificaciones */
+
+  .LogrosCertificaciones {
+    max-width: 600px;
+    padding: 1.5rem;
+  }
+
+  .TituloLogros {
+    font-size: 1.5rem;
+  }
+
+  .timeline-item p {
+    padding: 0 0rem; /* Añadir un padding para el texto */
+    font-size: 0.8rem;
+    max-width: 150px; /* Limitar el ancho del texto */
+  }
+
+  /* Últimos Artículos */
+
+  .UltimosArticulos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.3rem;
+    padding-bottom: 2.5rem; /* Espacio adicional para la paginación */
+  }
+
+  .btn-vermas {
+    padding: 0.7rem 1.5rem;
+    font-weight: 500;
+    transition: none;
+    width: auto;
+    animation-range: entry 0% cover 20%;
+  }
+
+  .btn-vermas a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .UltimosArticulos h2 {
+    color: white;
+    font-weight: 500;
+    animation: appearBlur linear;
+    animation-range: entry 0% cover 30%;
+  }
+
+  .descripcionUltimosArticulos {
+    color: white;
+    font-size: 1rem;
+    font-weight: 200;
+    animation: appearBlur linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .articulos {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+    margin-bottom: 3rem;
+  }
+
+  .slick-slide {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .articulo {
+    padding: 2.2rem 2rem;
+    background-color: white;
+    text-align: left;
+    margin: 0 5px; /* Añade espacio entre las tarjetas */
+    box-sizing: border-box; /* Para asegurar que padding no afecte altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que los elementos estén distribuidos y el botón esté al final */
+    height: 100%; /* Asegura que todas las cards tengan una altura consistente */
+    min-height: 270px; /* Altura mínima para que todas las cards tengan un tamaño similar */
+  }
+
+  .articulo h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    margin-bottom: 0;
+    white-space: normal; /* Permite que el título se rompa en varias líneas */
+  }
+
+  .articulo p {
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    color: #6e6e73;
+    margin-bottom: 1.5rem;
+    line-height: 1.5; /* Espaciado de las líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limitar a 3 líneas de texto */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Ocultar texto que exceda las líneas visibles */
+    text-overflow: ellipsis; /* Agregar "..." al final del texto truncado */
+    flex-grow: 1; /* Hace que el párrafo ocupe el espacio restante y el botón quede abajo */
+  }
+
+  .articulo button {
+    padding: 0.6rem 1.4rem;
+    font-weight: 500;
+    border-radius: 30px;
+    background-color: #2d898b;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: auto; /* Asegura que el botón siempre se quede en la parte inferior */
+    width: auto;
+  }
+
+  .articulo button:hover {
+    background-color: #217172; /* Color de fondo cuando se pasa el ratón */
+  }
+
+  /* beneficios */
+
+  .beneficiosContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 2rem;
+    gap: 1rem;
+  }
+
+  .beneficiosContainer h2 {
+    font-size: 2rem;
+  }
+
+  .beneficiosContainer p {
+    font-size: 1rem;
+  }
+
+  .beneficiosContainer ul {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    list-style: none;
+    /* align-items: center; */
+    padding: 0;
+  }
+
+  .beneficiosContainer ul li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-content: start;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-bottom: 1.5rem;
+  }
+
+  .beneficiosContainer ul li ion-icon {
+    padding-right: 0.5rem;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  /* Contact section */
+
+  .ContactSection {
+    text-align: center;
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .questionBlock {
+    padding: 3rem;
+    border-radius: 20px;
+  }
+
+  .questionBlock h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    font-family: "poppins", sans-serif;
+  }
+
+  .BtnContacto {
+    background-color: #2d898b;
+    font-family: "poppins", sans-serif;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    transition: 0.3s ease all;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .BtnContacto:hover {
+    transform: translateY(-3px);
+  }
+
+  /* footer */
+
+  footer {
+    padding: 0.5rem 1rem;
+  }
+
+  .bloque1 p {
+    text-align: center;
+  }
+
+  .bloque2 ul {
+    gap: 30px;
+  }
+
+  .bloque2 ul li a {
+    font-size: 0.8rem;
+    color: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .two-columns {
+    grid-column: span 1;
+  }
+}

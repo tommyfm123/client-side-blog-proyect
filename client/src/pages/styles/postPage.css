@@ -1,0 +1,144 @@
+.post-page {
+  padding-top: 7rem;
+  padding-right: 20rem;
+  padding-left: 20rem;
+  background-color: rgb(241, 241, 241);
+}
+
+.post-page h1 {
+  font-size: 2rem;
+}
+
+.post-page time {
+  font-size: 1rem;
+}
+
+.author p {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.image img {
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Esto alinea los elementos hijos al centro */
+}
+
+.content img {
+  width: 50%;
+  display: block; /* Esto asegura que la imagen se comporte como un bloque */
+  margin-left: auto;
+  margin-right: auto; /* Centra la imagen horizontalmente */
+  border-radius: 15px;
+}
+
+.content h2 {
+  text-align: left; /* Alinea el texto a la izquierda */
+  margin: 0;
+  padding: 0;
+}
+
+.content p {
+  text-align: left; /* Alinea el texto a la izquierda */
+  width: 100%; /* Asegura que el texto ocupe todo el ancho del contenedor */
+  margin: 0;
+  padding: 0;
+}
+
+.edit-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#BtnEdit {
+  display: flex; /* Crea un contenedor flexible */
+  flex-direction: row; /* Asegura que los elementos estén en fila */
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #007bff; /* Un color de fondo de ejemplo */
+  gap: 1rem; /* Espaciado entre el icono y el texto */
+  width: 200px;
+  transition: 0.3s ease all;
+  padding: 0 0;
+}
+
+#BtnEdit:hover {
+  background-color: #0861c0; /* Un color de fondo de ejemplo */
+}
+
+.delete-btn {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* -------- pop up ------------ */
+
+.confirmation-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.confirm-btn {
+  background-color: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background-color: #c9302c;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}

@@ -1,0 +1,66 @@
+/* register.css */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.register-form {
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-flex-column {
+  margin-bottom: 10px;
+}
+
+.register-input-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.register-input-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.register-input-form svg {
+  margin-right: 10px;
+  fill: #888;
+}
+
+.register-button-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-button-submit:hover {
+  background-color: #0056b3;
+}
+
+.register-paragraph {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.register-span {
+  color: #007bff;
+  cursor: pointer;
+}
