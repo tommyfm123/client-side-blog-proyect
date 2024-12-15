@@ -8,10 +8,12 @@ export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Nuevo estado para la carga
   const { setUserInfo } = useContext(UserContext);
 
   async function login(ev) {
     ev.preventDefault();
+    setIsLoading(true); // Activa la pantalla de carga
     const response = await fetch(
       "https://api-portfolio-arturo.vercel.app/login",
       {
@@ -22,11 +24,16 @@ export default function LoginPage() {
       }
     );
     if (response.ok) {
-      response.json().then((userInfo) => {
-        setUserInfo(userInfo);
-        setRedirect(true);
-      });
+      const userInfo = await response.json();
+      setUserInfo(userInfo);
+
+      // Simulación de carga adicional si fuera necesario
+      setTimeout(() => {
+        setIsLoading(false);
+        setRedirect(true); // Redirigir después de la carga
+      }, 1000); // Puedes ajustar el tiempo según la necesidad
     } else {
+      setIsLoading(false); // Desactiva la pantalla de carga si ocurre un error
       Swal.fire({
         icon: "error",
         title: "Error",
@@ -38,6 +45,16 @@ export default function LoginPage() {
 
   if (redirect) {
     return <Navigate to={"/"} />;
+  }
+
+  if (isLoading) {
+    // Mostrar pantalla de carga mientras `isLoading` sea true
+    return (
+      <div className='loading-container'>
+        <div className='loading-spinner'></div>
+        <p>Cargando, por favor espera...</p>
+      </div>
+    );
   }
 
   return (
