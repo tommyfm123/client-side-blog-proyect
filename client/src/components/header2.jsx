@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../UserContext";
+import { useNavigate } from "react-router-dom";
 import "./styles/headertwo.css";
 
 const Header2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [initialRender, setInitialRender] = useState(true);
+
+  const navigate = useNavigate(); // Obtén la función navigate aquí
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
