@@ -1,9 +1,8 @@
 import { useState, useContext } from "react";
-import { UserContext } from "../UserContext"; // Importar el contexto
+import { UserContext } from "../UserContext"; // Importar el contexto del usuario
 import { useNavigate, useLocation } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-import "../pages/styles/IndexPage.css";
-// import { Link } from "react-router-dom";
+import "../pages/styles/IndexPage.css"; // Asegúrate de tener el estilo
 
 export default function Post({
   _id,
@@ -14,78 +13,63 @@ export default function Post({
   website,
   isHome,
 }) {
-  const [showConfirmation, setShowConfirmation] = useState(false); // Para mostrar el pop-up de confirmación de eliminar
-  const [isDeleting, setIsDeleting] = useState(false); // Para manejar el estado de carga mientras se elimina el post
+  const [showConfirmation, setShowConfirmation] = useState(false); // Para mostrar el pop-up de confirmación
+  const [isDeleting, setIsDeleting] = useState(false); // Para el estado de carga al eliminar
   const { userInfo } = useContext(UserContext); // Acceso al contexto para verificar usuario logueado
   const navigate = useNavigate();
-  const location = useLocation(); // Obtener la ruta actual
+  const location = useLocation();
 
-  // Verifica si estamos en la página de artículos
-  const isArticlesPage = location.pathname === "/articles";
+  const isArticlesPage = location.pathname === "/articles"; // Verificar si estamos en la página de artículos
+  const username = userInfo?.username; // Usuario logueado
 
-  // Función para mostrar el pop-up de confirmación
+  // Mostrar pop-up de confirmación
   const handleShowConfirmation = () => {
     setShowConfirmation(true);
   };
 
-  // Función para manejar el clic y abrir la URL en una nueva ventana
+  // Redirigir a la página de edición
+  const handleEdit = () => {
+    navigate(`/edit/${_id}`); // Navegar a la página de edición del post
+  };
+
+  // Abrir el enlace del sitio web en una nueva pestaña
   const handleClick = () => {
     if (website) {
-      // Abre la URL en una nueva ventana o pestaña
       window.open(website, "_blank");
     }
   };
 
-  // Función para manejar la eliminación del post
+  // Eliminar el post
   const handleDelete = () => {
-    const token = document.cookie.replace(
-      /(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/,
-      "$1"
-    ); // Extraer token de las cookies
-
-    if (!token) {
-      console.error("No token found. You must be logged in to delete a post.");
-      return;
-    }
-
     setIsDeleting(true);
     fetch(`https://api-portfolio-arturo.vercel.app/post/${_id}`, {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`, // Enviar el token en el header
-      },
-      credentials: "include", // Esto asegura que las cookies sean enviadas con la solicitud
+      credentials: "include", // Incluye cookies automáticamente
     })
       .then((response) => {
         if (response.ok) {
           setShowConfirmation(false); // Cerrar el pop-up
-          navigate("/articles"); // Redirigir al usuario a la página de artículos después de eliminar
-          window.location.reload();
+          navigate("/articles"); // Redirigir a la lista de artículos
         } else {
           console.error(
-            "Failed to delete the post. Response:",
+            "No se pudo eliminar el post. Código de respuesta:",
             response.status
           );
+          alert("Error al eliminar el post. Intenta nuevamente.");
         }
       })
       .catch((error) => {
-        console.error("An error occurred while deleting the post:", error);
+        console.error("Error al intentar eliminar el post:", error);
+        alert("Hubo un problema al eliminar el post.");
       })
       .finally(() => {
-        setIsDeleting(false); // Ocultar indicador de carga
+        setIsDeleting(false); // Finalizar estado de carga
       });
   };
 
-  // Función para redirigir a la página de editar
-  const handleEdit = () => {
-    navigate(`/edit/${_id}`); // Redirigir a la página de edición del post
-  };
-
-  const username = userInfo?.username; // Verificar si hay usuario logueado
-
   return (
     <div className={`post ${isHome ? "post-home" : ""}`}>
+      {/* Contenido del post */}
       <div className='texts' onClick={handleClick}>
         <h2 className='titulopost'>{title}</h2>
         <p className='info'>
@@ -95,7 +79,7 @@ export default function Post({
         <p className='summary'>{summary}</p>
       </div>
 
-      {/* El pop-up de confirmación de eliminar o editar */}
+      {/* Pop-up de confirmación */}
       {showConfirmation && (
         <div className='confirmation-popup'>
           <p>¿Qué te gustaría hacer con este artículo?</p>
@@ -109,11 +93,11 @@ export default function Post({
         </div>
       )}
 
-      {/* Icono para opciones (editar/eliminar) */}
-      {username && isArticlesPage && (
+      {/* Icono para mostrar opciones (editar/eliminar) */}
+      {username === author.username && isArticlesPage && (
         <div
           className='post-options'
-          onClick={handleShowConfirmation} // Mostrar el pop-up cuando se haga clic
+          onClick={handleShowConfirmation}
           style={{ cursor: "pointer" }}
         >
           <ion-icon name='ellipsis-horizontal-sharp'></ion-icon>

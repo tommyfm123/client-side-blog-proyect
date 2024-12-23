@@ -94,12 +94,12 @@ export default function EditPost() {
       title,
       summary,
       website,
-      id, // Aseguramos que estamos enviando el ID del post
+      // id,
     };
 
     try {
       const response = await fetch(
-        "https://api-portfolio-arturo.vercel.app/post",
+        "https://api-portfolio-arturo.vercel.app/post/${id}",
         {
           method: "PUT",
           headers: {
