@@ -33,9 +33,19 @@ const Header2 = () => {
     fetch("https://api-portfolio-arturo.vercel.app/logout", {
       credentials: "include",
       method: "POST",
-    });
-    setUserInfo(null);
-    window.location.reload();
+    })
+      .then((response) => {
+        if (response.ok) {
+          setUserInfo(null);
+          navigate("/"); // Redirige al usuario al login después del logout
+        } else {
+          alert("Error al cerrar sesión. Intenta nuevamente.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error al cerrar sesión:", error);
+        alert("Hubo un problema al cerrar sesión.");
+      });
   }
 
   const username = userInfo?.username;
