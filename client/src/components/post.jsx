@@ -46,16 +46,19 @@ export default function Post({
       method: "DELETE",
       credentials: "include", // Incluye cookies automáticamente
     })
-      .then((response) => {
+      .then(async (response) => {
         if (response.ok) {
           setShowConfirmation(false); // Cerrar el pop-up
           navigate("/articles"); // Redirigir a la lista de artículos
         } else {
+          const errorData = await response.json();
           console.error(
-            "No se pudo eliminar el post. Código de respuesta:",
-            response.status
+            "Error al eliminar el post:",
+            errorData.error || "Desconocido"
           );
-          alert("Error al eliminar el post. Intenta nuevamente.");
+          alert(
+            `Error al eliminar el post: ${errorData.error || "Desconocido"}`
+          );
         }
       })
       .catch((error) => {
