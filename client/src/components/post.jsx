@@ -50,6 +50,7 @@ export default function Post({
         if (response.ok) {
           setShowConfirmation(false); // Cerrar el pop-up
           navigate("/articles"); // Redirigir a la lista de artículos
+          window.location.reload();
         } else {
           const errorData = await response.json();
           console.error(
