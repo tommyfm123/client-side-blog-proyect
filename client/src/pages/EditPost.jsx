@@ -99,7 +99,7 @@ export default function EditPost() {
 
     try {
       const response = await fetch(
-        "https://api-portfolio-arturo.vercel.app/post/${id}",
+        `https://api-portfolio-arturo.vercel.app/post/${id}`,
         {
           method: "PUT",
           headers: {
