@@ -6,27 +6,27 @@ import "./styles/headertwo.css";
 const Header2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [initialRender, setInitialRender] = useState(true);
+  const navigate = useNavigate();
+  const { setUserInfo, userInfo } = useContext(UserContext);
 
-  const navigate = useNavigate(); // Obtén la función navigate aquí
-
+  // Función para abrir/cerrar el menú en dispositivos móviles
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const { setUserInfo, userInfo } = useContext(UserContext);
-
-  // Obtener el perfil del usuario
+  // Llamada para obtener el perfil del usuario al cargar el componente
   useEffect(() => {
-    const token = localStorage.getItem("token"); // Obtener el token desde el localStorage
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);  // Verifica si el token está presente
 
     if (token) {
       fetch("https://api-portfolio-arturo.vercel.app/profile", {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${token}`, // Incluir el token en los encabezados
-          "Content-Type": "application/json"
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
-        credentials: "include", // Enviar cookies si es necesario
+        credentials: "include",
       })
         .then((response) => {
           if (!response.ok) {
@@ -35,25 +35,17 @@ const Header2 = () => {
           return response.json();
         })
         .then((userInfo) => {
-          setUserInfo(userInfo);
+          setUserInfo(userInfo); // Establecer información del usuario
         })
         .catch((error) => {
           console.error("Error al obtener perfil:", error);
-          navigate("/login"); // Redirigir a login si la autenticación falla
+          navigate("/login"); // Redirige a login si hay un error
         });
     } else {
-      console.log("Token no encontrado, redirigiendo a login...");
-      navigate("/login"); // Redirigir a login si no hay token
+      console.log("Token no encontrado");
+      navigate("/login");  // Redirige si no hay token
     }
   }, [setUserInfo, navigate]);
-
-  // Controlar el tiempo de renderizado inicial
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setInitialRender(false);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Función para cerrar sesión
   function logout() {
@@ -64,8 +56,9 @@ const Header2 = () => {
       .then((response) => {
         if (response.ok) {
           setUserInfo(null);
-          localStorage.removeItem("token"); // Eliminar el token del localStorage
-          navigate("/"); // Redirigir al login después del logout
+          localStorage.removeItem("token");  // Eliminar el token
+          console.log("Token eliminado");
+          navigate("/login"); // Redirige a la página de login después de cerrar sesión
         } else {
           alert("Error al cerrar sesión. Intenta nuevamente.");
         }
@@ -76,6 +69,7 @@ const Header2 = () => {
       });
   }
 
+  // Obtener el nombre de usuario si está autenticado
   const username = userInfo?.username;
 
   return (
