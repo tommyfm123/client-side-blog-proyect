@@ -14,44 +14,58 @@ export default function LoginPage() {
   async function login(ev) {
     ev.preventDefault();
     setIsLoading(true); // Activa la pantalla de carga
-    const response = await fetch(
-      "https://api-portfolio-arturo.vercel.app/login",
-      {
+
+    try {
+      const response = await fetch("https://api-portfolio-arturo.vercel.app/login", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-      }
-    );
-    if (response.ok) {
-      const userInfo = await response.json();
-      setUserInfo(userInfo);
+      });
 
-      // Simulación de carga adicional si fuera necesario
-      setTimeout(() => {
-        setIsLoading(false);
-        setRedirect(true); // Redirigir después de la carga
-      }, 1000); // Puedes ajustar el tiempo según la necesidad
-    } else {
-      setIsLoading(false); // Desactiva la pantalla de carga si ocurre un error
+      if (response.ok) {
+        const userInfo = await response.json();
+
+        // Almacena el token en localStorage
+        localStorage.setItem("token", userInfo.token);
+
+        setUserInfo(userInfo); // Actualiza el contexto con la información del usuario
+
+        setTimeout(() => {
+          setIsLoading(false);
+          setRedirect(true); // Redirigir después de la carga
+        }, 1000); // Puedes ajustar el tiempo según la necesidad
+      } else {
+        setIsLoading(false); // Desactiva la pantalla de carga si ocurre un error
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Credenciales incorrectas. Por favor, intenta nuevamente.",
+          confirmButtonText: "Entendido",
+        });
+      }
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error al hacer login:", error);
       Swal.fire({
         icon: "error",
-        title: "Error",
-        text: "Credenciales incorrectas. Por favor, intenta nuevamente.",
+        title: "Error de conexión",
+        text: "Hubo un problema con el servidor. Por favor, intenta más tarde.",
         confirmButtonText: "Entendido",
       });
     }
   }
 
+  // Si se ha redirigido, redirige al usuario a la página principal
   if (redirect) {
-    return <Navigate to={"/"} />;
+    return <Navigate to="/" />;
   }
 
+  // Si está cargando, muestra una pantalla de carga
   if (isLoading) {
-    // Mostrar pantalla de carga mientras `isLoading` sea true
     return (
-      <div className='loading-container'>
-        <div className='loading-spinner'></div>
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
         <p>Cargando, por favor espera...</p>
       </div>
     );
