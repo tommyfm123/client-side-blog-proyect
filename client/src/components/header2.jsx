@@ -15,16 +15,39 @@ const Header2 = () => {
 
   const { setUserInfo, userInfo } = useContext(UserContext);
 
+  // Obtener el perfil del usuario
   useEffect(() => {
-    fetch("https://api-portfolio-arturo.vercel.app/profile", {
-      credentials: "include",
-    }).then((response) => {
-      response.json().then((userInfo) => {
-        setUserInfo(userInfo);
-      });
-    });
-  }, [setUserInfo]);
+    const token = localStorage.getItem("token"); // Obtener el token desde el localStorage
 
+    if (token) {
+      fetch("https://api-portfolio-arturo.vercel.app/profile", {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`, // Incluir el token en los encabezados
+          "Content-Type": "application/json"
+        },
+        credentials: "include", // Enviar cookies si es necesario
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("No autorizado");
+          }
+          return response.json();
+        })
+        .then((userInfo) => {
+          setUserInfo(userInfo);
+        })
+        .catch((error) => {
+          console.error("Error al obtener perfil:", error);
+          navigate("/login"); // Redirigir a login si la autenticación falla
+        });
+    } else {
+      console.log("Token no encontrado, redirigiendo a login...");
+      navigate("/login"); // Redirigir a login si no hay token
+    }
+  }, [setUserInfo, navigate]);
+
+  // Controlar el tiempo de renderizado inicial
   useEffect(() => {
     const timer = setTimeout(() => {
       setInitialRender(false);
@@ -32,6 +55,7 @@ const Header2 = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Función para cerrar sesión
   function logout() {
     fetch("https://api-portfolio-arturo.vercel.app/logout", {
       credentials: "include",
@@ -40,7 +64,8 @@ const Header2 = () => {
       .then((response) => {
         if (response.ok) {
           setUserInfo(null);
-          navigate("/"); // Redirige al usuario al login después del logout
+          localStorage.removeItem("token"); // Eliminar el token del localStorage
+          navigate("/"); // Redirigir al login después del logout
         } else {
           alert("Error al cerrar sesión. Intenta nuevamente.");
         }
