@@ -39,7 +39,7 @@ const Header2 = () => {
         })
         .catch((error) => {
           console.error("Error al obtener perfil:", error);
-          navigate("/login"); // Redirige a login si hay un error
+          //navigate("/login"); // Redirige a login si hay un error
         });
     } else {
       console.log("Token no encontrado");
