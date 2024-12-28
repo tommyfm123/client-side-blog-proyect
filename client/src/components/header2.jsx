@@ -17,13 +17,13 @@ const Header2 = () => {
   // Llamada para obtener el perfil del usuario al cargar el componente
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("Token:", token);  // Verifica si el token está presente
+    console.log("Token:", token); // Verifica si el token está presente
 
     if (token) {
       fetch("https://api-portfolio-arturo.vercel.app/profile", {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         credentials: "include",
@@ -43,7 +43,7 @@ const Header2 = () => {
         });
     } else {
       console.log("Token no encontrado");
-      navigate("/login");  // Redirige si no hay token
+      // navigate("/login");  // Redirige si no hay token
     }
   }, [setUserInfo, navigate]);
 
@@ -56,7 +56,7 @@ const Header2 = () => {
       .then((response) => {
         if (response.ok) {
           setUserInfo(null);
-          localStorage.removeItem("token");  // Eliminar el token
+          localStorage.removeItem("token"); // Eliminar el token
           console.log("Token eliminado");
           navigate("/login"); // Redirige a la página de login después de cerrar sesión
         } else {
