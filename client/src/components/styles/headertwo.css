@@ -1,3 +1,26 @@
+/* spinner de carga */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Header styles */
 .Header {
   display: flex;
@@ -11,6 +34,7 @@
   width: 100%;
   border-bottom: 1px rgba(88, 88, 88, 0.199) solid;
 }
+
 .headerContainer {
   display: flex;
   width: 100%;
@@ -33,6 +57,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .login-btn a {
   text-decoration: none;
   color: white;
@@ -67,6 +92,7 @@
   text-decoration: none;
   color: black;
 }
+
 .hamburger {
   display: none;
   cursor: pointer;
@@ -98,14 +124,15 @@
   stroke-dasharray: 12 63;
 }
 
-.hamburger input:checked + svg {
+.hamburger input:checked+svg {
   transform: rotate(-45deg);
 }
 
-.hamburger input:checked + svg .line-top-bottom {
+.hamburger input:checked+svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
+
 /* .ContainerBTN {
   width: min-content;
   padding: 0;
@@ -139,7 +166,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: auto; /* Alto fijo para el contenedor */
+    height: auto;
+    /* Alto fijo para el contenedor */
     width: auto;
     margin: 0;
     padding: 0.5rem 0rem;
@@ -149,24 +177,35 @@
   .menu {
     display: flex;
     justify-content: center;
-    position: fixed; /* Cambiado a fixed para que cubra toda la pantalla */
-    top: 0; /* Asegura que esté en la parte superior */
-    left: 0; /* Alineado al borde izquierdo */
-    right: 0; /* Alineado al borde derecho */
+    position: fixed;
+    /* Cambiado a fixed para que cubra toda la pantalla */
+    top: 0;
+    /* Asegura que esté en la parte superior */
+    left: 0;
+    /* Alineado al borde izquierdo */
+    right: 0;
+    /* Alineado al borde derecho */
     background-color: #eeeeee;
-    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho de la pantalla */
     flex-direction: column;
     padding: 20px;
-    opacity: 0; /* Menú oculto inicialmente */
-    transform: translateX(100%); /* Fuera de la pantalla a la derecha */
-    pointer-events: none; /* No es interactivo cuando está cerrado */
-    height: 100vh; /* Menú cubriendo el 100% de la altura de la pantalla */
+    opacity: 0;
+    /* Menú oculto inicialmente */
+    transform: translateX(100%);
+    /* Fuera de la pantalla a la derecha */
+    pointer-events: none;
+    /* No es interactivo cuando está cerrado */
+    height: 100vh;
+    /* Menú cubriendo el 100% de la altura de la pantalla */
     gap: 30px;
-    z-index: 1; /* Asegura que el menú esté sobre otros elementos */
+    z-index: 1;
+    /* Asegura que el menú esté sobre otros elementos */
   }
 
   .menu li a {
-    font-size: 1.5rem; /* Tamaño de los enlaces en el menú */
+    font-size: 1.5rem;
+    /* Tamaño de los enlaces en el menú */
     color: black;
   }
 
@@ -178,16 +217,15 @@
 
   /* Menú abierto */
   .menu.open {
-    pointer-events: all; /* hace que el menu sea interactivo cuando se abre*/
-    -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
+    pointer-events: all;
+    /* hace que el menu sea interactivo cuando se abre*/
+    -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   /* Menú cerrando (salida hacia la derecha) */
   .menu.closing {
-    -webkit-animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
+    -webkit-animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
@@ -198,6 +236,7 @@
       transform: translateX(1000px);
       opacity: 0;
     }
+
     100% {
       -webkit-transform: translateX(0);
       transform: translateX(0);
@@ -211,6 +250,7 @@
       transform: translateX(1000px);
       opacity: 1;
     }
+
     100% {
       -webkit-transform: translateX(0);
       transform: translateX(0);
@@ -225,6 +265,7 @@
       transform: translateX(0);
       opacity: 1;
     }
+
     100% {
       -webkit-transform: translateX(1000px);
       transform: translateX(1000px);
@@ -238,6 +279,7 @@
       transform: translateX(0);
       opacity: 1;
     }
+
     100% {
       -webkit-transform: translateX(1000px);
       transform: translateX(1000px);
@@ -250,7 +292,8 @@
     /* position: fixed; */
     /* top: 20px; Espaciado superio */
     /* right: 25px;  */
-    z-index: 2; /* Asegura que esté por encima del menú */
+    z-index: 2;
+    /* Asegura que esté por encima del menú */
     cursor: pointer;
     display: block;
   }
@@ -261,7 +304,8 @@
     height: 3px;
     background-color: #333;
     margin: 0;
-    transition: all 0.3s ease; /* Animación para el ícono */
+    transition: all 0.3s ease;
+    /* Animación para el ícono */
   }
 
   /* Logo */
@@ -272,7 +316,8 @@
     align-items: center;
     position: relative;
     right: auto;
-    z-index: 2; /* Asegura que el logo esté por encima del menú */
+    z-index: 2;
+    /* Asegura que el logo esté por encima del menú */
   }
 
   /* Ocultar botón de login en móvil */

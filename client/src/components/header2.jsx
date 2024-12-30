@@ -8,6 +8,8 @@ const Header2 = () => {
   const [initialRender, setInitialRender] = useState(true);
   const navigate = useNavigate();
   const { setUserInfo, userInfo } = useContext(UserContext);
+  const [loading, setLoading] = useState(true); // loading login
+
 
   // Función para abrir/cerrar el menú en dispositivos móviles
   const toggleMenu = () => {
@@ -17,7 +19,7 @@ const Header2 = () => {
   // Llamada para obtener el perfil del usuario al cargar el componente
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("Token:", token); // Verifica si el token está presente
+    //console.log("Token:", token); // Verifica si el token está presente
 
     if (token) {
       fetch("https://api-portfolio-arturo.vercel.app/profile", {
@@ -36,12 +38,15 @@ const Header2 = () => {
         })
         .then((userInfo) => {
           setUserInfo(userInfo); // Establecer información del usuario
+          setLoading(false); // Cambiar el estado a no cargando
         })
         .catch((error) => {
           console.error("Error al obtener perfil:", error);
+          setLoading(false);
           //navigate("/login"); // Redirige a login si hay un error
         });
     } else {
+      setLoading(false); // No hay token, cambia el estado a no cargando
       console.log("Token no encontrado");
       // navigate("/login");  // Redirige si no hay token
     }
@@ -72,6 +77,12 @@ const Header2 = () => {
   // Obtener el nombre de usuario si está autenticado
   const username = userInfo?.username;
 
+  if (loading) {
+    return (
+      <span class="loader"></span>
+    );
+  }
+
   return (
     <header className='Header'>
       <div className='headerContainer'>
@@ -100,9 +111,8 @@ const Header2 = () => {
 
         {/* Menu con animación */}
         <ul
-          className={`menu ${
-            isMenuOpen ? "open" : isMenuOpen === false ? "closing" : ""
-          }`}
+          className={`menu ${isMenuOpen ? "open" : isMenuOpen === false ? "closing" : ""
+            }`}
         >
           <li>
             <a href='/'>Inicio</a>

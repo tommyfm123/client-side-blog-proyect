@@ -1,3 +1,4 @@
+/* index page */
 .containerPostPage {
   padding-top: 5rem;
   background-color: #f4f4f4;
@@ -6,20 +7,19 @@
 }
 
 .ContainerPost {
-  padding: 0 10rem; /* hace los posts mas chicos*/
+  padding: 0 10rem;
+  /* hace los posts mas chicos*/
 }
 
 .TituloArticulos {
   text-align: center;
   font-size: 2rem;
   /* background: linear-gradient(90deg, #0f3058 0%, #006adc 33.333%, #11181c 66.666%, #0f3058 100%); */
-  background: linear-gradient(
-    90deg,
-    #2d898b 0%,
-    #2b6969 33.333%,
-    #183b3b 66.666%,
-    #6fa8c2 100%
-  );
+  background: linear-gradient(90deg,
+      #2d898b 0%,
+      #2b6969 33.333%,
+      #183b3b 66.666%,
+      #6fa8c2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -45,11 +45,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #ffffff; /* Blanco puro o un gris claro */
+  background-color: #ffffff;
+  /* Blanco puro o un gris claro */
   border-radius: 15px;
   padding: 1.6rem 1.7rem;
   gap: 15px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave y difusa */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  /* Sombra más suave y difusa */
   cursor: pointer;
   width: 100%;
 }
@@ -61,11 +63,13 @@
   font-weight: 600;
   color: black;
 }
+
 div.post div.texts a {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   color: inherit;
 }
+
 div.post p.info {
   margin: 15px 0;
   color: #888;
@@ -74,9 +78,11 @@ div.post p.info {
   display: flex;
   gap: 10px;
 }
+
 div.post p.info a.author {
   color: #333;
 }
+
 div.post p.summary {
   margin: 10px 0;
   line-height: 1.8rem;
@@ -84,7 +90,8 @@ div.post p.summary {
 
 .post .image {
   width: 600px;
-  height: 200px; /* Tamaño uniforme para todas las imágenes */
+  height: 200px;
+  /* Tamaño uniforme para todas las imágenes */
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -115,7 +122,8 @@ div.post p.summary {
   width: auto;
   padding: 0.6rem 1.5rem;
   border-radius: 30px;
-  transition: all 0.3s ease; /* Transición suave */
+  transition: all 0.3s ease;
+  /* Transición suave */
 }
 
 .btnCrearArticulo ion-icon {
@@ -124,7 +132,8 @@ div.post p.summary {
 }
 
 .btnCrearArticulo:hover ion-icon {
-  transform: rotate(45deg); /* Girar el icono 45 grados */
+  transform: rotate(45deg);
+  /* Girar el icono 45 grados */
 }
 
 /* estilos de post en home.jsx */
@@ -153,28 +162,33 @@ div.post p.summary {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgb(255, 255, 255); /* Fondo oscuro y semitransparente */
+  background-color: rgb(255, 255, 255);
+  /* Fondo oscuro y semitransparente */
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  z-index: 999999; /* Asegura que el popup esté encima de otros elementos */
+  z-index: 999999;
+  /* Asegura que el popup esté encima de otros elementos */
   backdrop-filter: blur(5px);
 }
 
 .confirmation-popup .popup-content {
-  background-color: white; /* Fondo blanco del cuadro */
+  background-color: white;
+  /* Fondo blanco del cuadro */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 300px; /* Ajusta el tamaño según el contenido */
+  width: 300px;
+  /* Ajusta el tamaño según el contenido */
 }
 
 .confirmation-popup p {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #ffffff; /* Texto oscuro para mejor legibilidad */
+  color: #ffffff;
+  /* Texto oscuro para mejor legibilidad */
 }
 
 .confirmation-buttons {
@@ -196,12 +210,15 @@ div.post p.summary {
 }
 
 .confirmation-buttons button:hover {
-  background-color: #ddd; /* Color al pasar el cursor por encima */
+  background-color: #ddd;
+  /* Color al pasar el cursor por encima */
 }
 
 .confirmation-buttons button:disabled {
-  background-color: #ccc; /* Color de fondo cuando el botón está deshabilitado */
-  cursor: not-allowed; /* Cursor de "no permitido" */
+  background-color: #ccc;
+  /* Color de fondo cuando el botón está deshabilitado */
+  cursor: not-allowed;
+  /* Cursor de "no permitido" */
 }
 
 /*  fin confirmation */
@@ -221,7 +238,8 @@ div.post p.summary {
   }
 
   .ContainerPost {
-    padding: 0 0rem; /* hace los posts mas chicos*/
+    padding: 0 0rem;
+    /* hace los posts mas chicos*/
   }
 
   .TituloArticulos {
@@ -244,7 +262,8 @@ div.post p.summary {
   /* -----------Post Styles ----------- */
 
   .post {
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.107); /* Sombra más suave y difusa */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.107);
+    /* Sombra más suave y difusa */
     width: 100%;
   }
 
@@ -253,29 +272,34 @@ div.post p.summary {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(255, 255, 255); /* Fondo oscuro y semitransparente */
+    background-color: rgb(255, 255, 255);
+    /* Fondo oscuro y semitransparente */
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    z-index: 999999; /* Asegura que el popup esté encima de otros elementos */
+    z-index: 999999;
+    /* Asegura que el popup esté encima de otros elementos */
     backdrop-filter: blur(5px);
   }
 
   .confirmation-popup .popup-content {
-    background-color: white; /* Fondo blanco del cuadro */
+    background-color: white;
+    /* Fondo blanco del cuadro */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 300px; /* Ajusta el tamaño según el contenido */
+    width: 300px;
+    /* Ajusta el tamaño según el contenido */
   }
 
   .confirmation-popup p {
     font-size: 1rem;
     padding: 0 1rem;
     margin-bottom: 20px;
-    color: #ffffff; /* Texto oscuro para mejor legibilidad */
+    color: #ffffff;
+    /* Texto oscuro para mejor legibilidad */
   }
 
   .confirmation-buttons {
@@ -299,11 +323,13 @@ div.post p.summary {
   }
 
   .confirmation-buttons button:hover {
-    background-color: #ffffffd6; /* Color al pasar el cursor por encima */
+    background-color: #ffffffd6;
+    /* Color al pasar el cursor por encima */
   }
 
   .confirmation-buttons button:disabled {
-    background-color: #ffffffd6; /* Color de fondo cuando el botón está deshabilitado */
+    background-color: #ffffffd6;
+    /* Color de fondo cuando el botón está deshabilitado */
   }
 
   .post-home {
